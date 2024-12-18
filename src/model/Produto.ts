@@ -1,12 +1,12 @@
 export abstract class Produto{
 
-    //Modelo de Dados
+    //Atributo
     private _id: number;
     private _nome: string;
     private _tipo: number;
     private _preco: number;
 
-
+    //Método Construtor
 	constructor(id: number, nome: string, tipo: number, preco: number) {
 		this._id = id;
 		this._nome = nome;
@@ -44,9 +44,9 @@ export abstract class Produto{
 		this._preco = value;
 	}
 
-    public visualizar(){
+    public visualizar(): void{
         
-        let tipo: string;
+        let tipo: string =  "";
 
         switch(this._tipo){
             case 1:
@@ -59,6 +59,7 @@ export abstract class Produto{
 
             default: 
                 tipo = "Tipo Inválido!";
+                break;
         }
 
         console.log("_________________________________");
@@ -67,7 +68,7 @@ export abstract class Produto{
         console.log(`ID do Produto: ${this._id}`)
         console.log(`Nome do Produto: ${this._nome}`)
         console.log(`Tipo do Produto: ${tipo}`)
-        console.log(`Preço do Produto ${this._preco}`)
+        console.log(`Preço do Produto ${this._preco.toFixed(2)}`);
     }
     
 }
